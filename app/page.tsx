@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
@@ -39,10 +38,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-[#0a0a0f] via-[#0d1b2a] to-[#1b3a5c] text-white overflow-x-hidden">
       
-      {/* ============ FLOATING MATHEMATICAL OBJECTS - ENHANCED VISIBILITY ============ */}
+      {/* ============ FLOATING MATHEMATICAL OBJECTS ============ */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         
-        {/* ===== Large Math Symbols - More Visible ===== */}
+        {/* ===== Large Math Symbols ===== */}
         <div className="absolute top-10 left-[5%] text-7xl text-blue-400/30 font-serif animate-float-math" style={{ animationDuration: '15s', animationDelay: '0s' }}>
           π
         </div>
@@ -88,7 +87,21 @@ export default function Home() {
           ±
         </div>
 
-        {/* ===== Floating Equations - More Visible ===== */}
+        {/* ===== More Integrals & Calculus Symbols ===== */}
+        <div className="absolute top-[5%] left-[35%] text-5xl text-blue-400/25 font-serif animate-float-math" style={{ animationDuration: '16s', animationDelay: '1.5s' }}>
+          ∮
+        </div>
+        <div className="absolute bottom-[15%] right-[25%] text-5xl text-purple-400/25 font-serif animate-float-math" style={{ animationDuration: '19s', animationDelay: '3s' }}>
+          ∬
+        </div>
+        <div className="absolute top-[40%] left-[75%] text-4xl text-cyan-400/25 font-serif animate-float-math" style={{ animationDuration: '17s', animationDelay: '4.5s' }}>
+          ∭
+        </div>
+        <div className="absolute bottom-[60%] left-[5%] text-5xl text-pink-400/25 font-serif animate-float-math" style={{ animationDuration: '21s', animationDelay: '2s' }}>
+          ∇
+        </div>
+
+        {/* ===== Floating Equations ===== */}
         <div className="absolute top-1/4 left-[15%] text-xl text-blue-400/20 font-mono animate-float-equation" style={{ animationDuration: '25s', animationDelay: '0s' }}>
           E = mc²
         </div>
@@ -108,7 +121,18 @@ export default function Home() {
           ∫₀^∞ e^(-x²) dx = √π/2
         </div>
 
-        {/* ===== Floating Geometric Shapes - More Visible ===== */}
+        {/* ===== More Integral Equations ===== */}
+        <div className="absolute top-[20%] right-[35%] text-base text-indigo-400/20 font-mono animate-float-equation" style={{ animationDuration: '24s', animationDelay: '6s' }}>
+          ∫ u dv = uv - ∫ v du
+        </div>
+        <div className="absolute bottom-[25%] left-[55%] text-base text-rose-400/20 font-mono animate-float-equation" style={{ animationDuration: '26s', animationDelay: '7s' }}>
+          ∮ F · dr = ∬ (∇ × F) · dS
+        </div>
+        <div className="absolute top-[60%] right-[60%] text-base text-teal-400/20 font-mono animate-float-equation" style={{ animationDuration: '28s', animationDelay: '8s' }}>
+          ∫ₐᵇ f(x) dx = F(b) - F(a)
+        </div>
+
+        {/* ===== Floating Geometric Shapes ===== */}
         <div className="absolute top-5 left-[20%] w-16 h-16 border-2 border-blue-400/20 rounded-full animate-float-shape" style={{ animationDuration: '12s', animationDelay: '0s' }}></div>
         <div className="absolute top-1/2 right-[25%] w-20 h-20 border-2 border-purple-400/20 rotate-45 animate-float-shape" style={{ animationDuration: '14s', animationDelay: '2s' }}></div>
         <div className="absolute bottom-10 left-[30%] w-12 h-12 border-2 border-cyan-400/20 rounded-full animate-float-shape" style={{ animationDuration: '16s', animationDelay: '4s' }}></div>
@@ -127,7 +151,7 @@ export default function Home() {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-3xl animate-pulse-slow delay-2000"></div>
         
-        {[...Array(20)].map((_, i) => (
+        {[...Array(30)].map((_, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 bg-white/20 rounded-full animate-float"
@@ -136,8 +160,8 @@ export default function Home() {
               top: `${Math.random() * 100}%`,
               animationDuration: `${10 + Math.random() * 20}s`,
               animationDelay: `${Math.random() * 10}s`,
-              width: `${1 + Math.random() * 2}px`,
-              height: `${1 + Math.random() * 2}px`,
+              width: `${1 + Math.random() * 3}px`,
+              height: `${1 + Math.random() * 3}px`,
             }}
           ></div>
         ))}
@@ -211,17 +235,14 @@ export default function Home() {
                 <div className="absolute -inset-8 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-3xl blur-3xl animate-pulse-slow"></div>
                 <div className="absolute -inset-4 border border-white/5 rounded-2xl animate-spin-slow"></div>
                 
-                {/* Cover image with glass effect */}
+                {/* Cover image with glass effect - USING REGULAR IMG TAG */}
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/20 transform hover:scale-[1.02] transition-all duration-700 group">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-                  <Image
+                  <img
                     src="/cover.jpg"
                     alt="Changing The Mindset Of An African Child - Cover"
-                    width={900}
-                    height={1260}
                     className="w-full h-auto object-contain relative z-0"
-                    priority
-                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 80vw, 900px"
+                    style={{ width: '100%', height: 'auto' }}
                   />
                   {/* Animated border glow */}
                   <div className="absolute inset-0 border-2 border-white/10 rounded-2xl pointer-events-none group-hover:border-blue-500/30 transition-all duration-500"></div>

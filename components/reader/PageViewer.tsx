@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { useState, useEffect, useRef, TouchEvent } from 'react';
 import { 
   ChevronLeft, 
@@ -218,28 +217,24 @@ export default function PageViewer({ pageNumber, totalPages, onPageChange }: Pag
           </div>
         )}
 
-        {/* Image */}
+        {/* Image - Using regular img tag instead of Next.js Image */}
         {!error && (
           <div 
             className="relative w-full transition-transform duration-300"
             style={{ transform: `scale(${zoom / 100})` }}
           >
-            <Image
-              ref={imageRef}
+            <img
+              ref={imageRef as any}
               src={imagePath}
               alt={`Page ${pageNumber}`}
-              width={800}
-              height={1100}
               className="w-full h-auto"
               onLoad={() => setLoading(false)}
               onError={() => {
                 setLoading(false);
                 setError(true);
               }}
-              priority={pageNumber <= 10}
-              quality={100}
-              sizes="(max-width: 768px) 100vw, 800px"
               draggable={false}
+              style={{ width: '100%', height: 'auto' }}
             />
           </div>
         )}

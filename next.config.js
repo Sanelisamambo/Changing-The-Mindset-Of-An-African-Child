@@ -1,14 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: false,
-    formats: ['image/webp'],
+    unoptimized: true, // ← This disables Next.js image optimization
   },
   experimental: {
     optimizeCss: true,
   },
   reactStrictMode: true,
-  // Important for Netlify
   output: 'standalone',
 };
 
