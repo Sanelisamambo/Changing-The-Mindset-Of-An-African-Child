@@ -317,7 +317,7 @@ export default function ReaderPage({ params }: ReaderPageProps) {
         </div>
       </div>
 
-      {/* ============ TRANSPARENT SIDE NAVIGATION BUTTONS ============ */}
+      {/* ============ BRIGHT BLUE NAVIGATION BUTTONS ============ */}
       {/* Previous Button - Left Side */}
       <button
         onClick={() => handlePageChange(currentPage - 1)}
@@ -326,8 +326,8 @@ export default function ReaderPage({ params }: ReaderPageProps) {
           showControls ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
         } ${currentPage <= 1 ? 'opacity-0 cursor-not-allowed' : 'hover:scale-110'}`}
       >
-        <div className="bg-transparent hover:bg-white/5 backdrop-blur-sm border border-white/5 hover:border-white/20 rounded-full p-1.5 sm:p-2.5 transition-all duration-300 group">
-          <ChevronLeft size={20} className="text-white/40 group-hover:text-white/80 sm:w-6 sm:h-6" strokeWidth={1.5} />
+        <div className="bg-blue-500/20 hover:bg-blue-500/30 backdrop-blur-md border-2 border-blue-400/60 hover:border-blue-400/80 rounded-full p-1.5 sm:p-2.5 transition-all duration-300 group shadow-lg shadow-blue-500/20">
+          <ChevronLeft size={20} className="text-blue-400 group-hover:text-blue-300 sm:w-6 sm:h-6" strokeWidth={2.5} />
         </div>
       </button>
 
@@ -339,8 +339,8 @@ export default function ReaderPage({ params }: ReaderPageProps) {
           showControls ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
         } ${currentPage >= BOOK_META.totalPages ? 'opacity-0 cursor-not-allowed' : 'hover:scale-110'}`}
       >
-        <div className="bg-transparent hover:bg-white/5 backdrop-blur-sm border border-white/5 hover:border-white/20 rounded-full p-1.5 sm:p-2.5 transition-all duration-300 group">
-          <ChevronRight size={20} className="text-white/40 group-hover:text-white/80 sm:w-6 sm:h-6" strokeWidth={1.5} />
+        <div className="bg-blue-500/20 hover:bg-blue-500/30 backdrop-blur-md border-2 border-blue-400/60 hover:border-blue-400/80 rounded-full p-1.5 sm:p-2.5 transition-all duration-300 group shadow-lg shadow-blue-500/20">
+          <ChevronRight size={20} className="text-blue-400 group-hover:text-blue-300 sm:w-6 sm:h-6" strokeWidth={2.5} />
         </div>
       </button>
 
