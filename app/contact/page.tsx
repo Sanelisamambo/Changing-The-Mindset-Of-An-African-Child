@@ -337,17 +337,25 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* ============ RIGHT: CONTACT INFO ============ */}
+          {/* ============ RIGHT: CONTACT INFO - EMAIL STAYS ON ONE LINE ============ */}
           <div className="lg:col-span-2 space-y-4">
-            {/* Quick Contact - Phone number removed */}
+            {/* Quick Contact */}
             <div className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl shadow-blue-500/10 p-6">
               <h3 className="text-xs font-semibold text-white/40 uppercase tracking-wider mb-4">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3 p-3 bg-white/5 rounded-xl">
                   <Mail size={18} className="text-blue-400 mt-0.5 flex-shrink-0" />
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="text-xs text-white/40">Email</p>
-                    <a href="mailto:diary.of.a.black.man101@gmail.com" className="text-sm text-white/80 hover:text-blue-400 transition-colors">
+                    {/* FIX: Email stays on ONE LINE - uses horizontal scroll if needed */}
+                    <a 
+                      href="mailto:diary.of.a.black.man101@gmail.com" 
+                      className="text-sm text-white/80 hover:text-blue-400 transition-colors whitespace-nowrap overflow-x-auto block scrollbar-hide"
+                      style={{
+                        scrollbarWidth: 'none',
+                        msOverflowStyle: 'none',
+                      }}
+                    >
                       diary.of.a.black.man101@gmail.com
                     </a>
                   </div>
@@ -444,6 +452,17 @@ export default function ContactPage() {
         .animate-float-equation { animation: float-equation linear infinite; }
         .animate-float-shape { animation: float-shape linear infinite; }
         .delay-1000 { animation-delay: 1000ms; }
+        
+        /* Hide scrollbar for Chrome, Safari and Edge */
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        
+        /* Hide scrollbar for Firefox */
+        .scrollbar-hide {
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
       `}</style>
     </main>
   );
